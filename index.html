@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EthicaHR - Explainable AI for Ethical Recruitment</title>
+
+    <meta name="description"
+          content="EthicaHR is developing an explainable AI approach to recruitment, designed around transparency, fairness and verifiable candidate evaluation.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #111;
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 30px;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .navbar {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            font-weight: 400;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            font-size: 14px;
+        }
+
+        nav a {
+            color: #444;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            padding: 120px 0 110px;
+            background: linear-gradient(180deg, #f7f8fa 0%, #ffffff 100%);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: 0.98;
+            letter-spacing: -4px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: #555;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 21px;
+            color: #555;
+            margin-bottom: 35px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #111;
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            background: #333;
+        }
+
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 44px;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
+        }
+
+        .section-intro {
+            max-width: 750px;
+            font-size: 19px;
+            color: #555;
+            margin-bottom: 50px;
+        }
+
+
+        /* =========================
+           VISION
+        ========================= */
+
+        .vision {
+            background: #111;
+            color: #fff;
+        }
+
+        .vision .section-label {
+            color: #aaa;
+        }
+
+        .vision h2 {
+            max-width: 800px;
+        }
+
+        .vision-placeholder {
+            border: 1px dashed #666;
+            padding: 35px;
+            margin-top: 40px;
+            color: #aaa;
+            font-style: italic;
+            border-radius: 10px;
+        }
+
+
+        /* =========================
+           PROBLEM
+        ========================= */
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #e4e4e4;
+            border-radius: 12px;
+            padding: 32px;
+            background: #fff;
+        }
+
+        .card-number {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+
+        /* =========================
+           TARGET
+        ========================= */
+
+        .target {
+            background: #f7f7f7;
+        }
+
+        .target-box {
+            max-width: 850px;
+            font-size: 22px;
+            line-height: 1.5;
+        }
+
+        .target-box strong {
+            color: #111;
+        }
+
+
+        /* =========================
+           PRODUCT
+        ========================= */
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            border-top: 2px solid #111;
+            padding-top: 25px;
+        }
+
+        .product-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .product-card p {
+            color: #666;
+        }
+
+
+        /* =========================
+           MVP
+        ========================= */
+
+        .mvp {
+            background: #f7f7f7;
+        }
+
+        .mvp-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .mvp-step {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .mvp-step .number {
+            font-size: 13px;
+            font-weight: 700;
+            color: #888;
+            margin-bottom: 25px;
+        }
+
+        .mvp-step h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .mvp-step p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .xai-highlight {
+            margin-top: 45px;
+            padding: 35px;
+            border-radius: 12px;
+            background: #111;
+            color: #fff;
+        }
+
+        .xai-highlight h3 {
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .xai-highlight p {
+            color: #ccc;
+            max-width: 800px;
+        }
+
+
+        /* =========================
+           HOW IT WORKS
+        ========================= */
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 45px;
+        }
+
+        .process-step {
+            padding-right: 20px;
+        }
+
+        .process-step .number {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            color: #666;
+        }
+
+
+        /* =========================
+           WHY ETHICAHR
+        ========================= */
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+
+        /* =========================
+           AI ACT
+        ========================= */
+
+        .regulation {
+            background: #111;
+            color: #fff;
+        }
+
+        .regulation .section-label {
+            color: #aaa;
+        }
+
+        .regulation-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .regulation p {
+            color: #ccc;
+            font-size: 17px;
+        }
+
+        .regulation-points {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .regulation-point {
+            border-left: 2px solid #777;
+            padding-left: 20px;
+        }
+
+        .regulation-point h3 {
+            margin-bottom: 5px;
+        }
+
+        .regulation-point p {
+            font-size: 15px;
+        }
+
+        .regulation-note {
+            margin-top: 40px;
+            font-size: 13px;
+            color: #888;
+        }
+
+
+        /* =========================
+           BUSINESS MODEL
+        ========================= */
+
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 45px;
+        }
+
+        .business-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 35px;
+        }
+
+        .business-card h3 {
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .business-card p {
+            color: #666;
+        }
+
+        .price {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 20px 0 5px;
+        }
+
+        .price-description {
+            color: #888;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           ROADMAP
+        ========================= */
+
+        .roadmap {
+            background: #f7f7f7;
+        }
+
+        .timeline {
+            margin-top: 50px;
+            border-left: 2px solid #ddd;
+            padding-left: 35px;
+        }
+
+        .timeline-item {
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -44px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: #111;
+            border-radius: 50%;
+        }
+
+        .timeline-item span {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #777;
+        }
+
+        .timeline-item h3 {
+            font-size: 23px;
+            margin: 8px 0;
+        }
+
+        .timeline-item p {
+            color: #666;
+            max-width: 750px;
+        }
+
+
+        /* =========================
+           TEAM
+        ========================= */
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: #eee;
+        }
+
+        .team-member h3 {
+            margin-bottom: 7px;
+        }
+
+        .team-member p {
+            color: #666;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            padding: 110px 0;
+            background: #f0f0f0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            max-width: 750px;
+            margin: 0 auto 20px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: #666;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #111;
+            color: #fff;
+            padding: 45px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-brand {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .footer-info {
+            text-align: right;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .footer-info a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #333;
+            color: #666;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 90px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .problem-grid,
+            .product-grid,
+            .business-grid,
+            .why-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mvp-flow,
+            .process {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .regulation-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-info {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            section {
+                padding: 75px 0;
+            }
+
+            h2 {
+                font-size: 36px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .mvp-flow,
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+            .team-member {
+                grid-template-columns: 90px 1fr;
+            }
+
+            .team-member img {
+                width: 90px;
+                height: 90px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="container navbar">
+
+        <div class="logo">
+            Ethica<span>HR</span>
+        </div>
+
+        <nav>
+            <a href="#vision">Our Vision</a>
+            <a href="#problem">The Problem</a>
+            <a href="#product">Our Product</a>
+            <a href="#mvp">MVP</a>
+            <a href="#regulation">AI & Regulation</a>
+            <a href="#business">Business Model</a>
+            <a href="#team">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Explainable AI for Recruitment
+            </div>
+
+            <h1>
+                Making AI-powered recruitment
+                <span>more ethical, transparent and human.</span>
+            </h1>
+
+            <p>
+                EthicaHR is developing an AI-based approach to candidate
+                evaluation designed around explainability, transparency
+                and fairness.
+            </p>
+
+            <a href="#product" class="button">
+                Discover EthicaHR
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VISION
+========================= -->
+
+<section class="vision" id="vision">
+
+    <div class="container">
+
+        <div class="section-label">
+            Our Vision
+        </div>
+
+        <h2>
+            A recruitment process where every AI decision can be understood.
+        </h2>
+
+        <div class="vision-placeholder">
+            To make AI in recruitment transparent, explainable and accountable, so technology can support fairer hiring decisions.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROBLEM
+========================= -->
+
+<section id="problem">
+
+    <div class="container">
+
+        <div class="section-label">
+            The Problem
+        </div>
+
+        <h2>
+            Recruitment AI is powerful.<br>
+            But can its decisions be explained?
+        </h2>
+
+        <p class="section-intro">
+            AI is increasingly being used to support recruitment and
+            candidate evaluation. Yet many systems operate as black boxes,
+            making it difficult to understand why a candidate was selected
+            or rejected.
+        </p>
+
+
+        <div class="problem-grid">
+
+            <div class="card">
+
+                <div class="card-number">
+                    01
+                </div>
+
+                <h3>
+                    Black-box decisions
+                </h3>
+
+                <p>
+                    Traditional AI-based screening systems can produce
+                    decisions without providing a clear explanation of
+                    which factors contributed to the outcome.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">
+                    02
+                </div>
+
+                <h3>
+                    Lack of transparency
+                </h3>
+
+                <p>
+                    Recruiters and organizations may struggle to inspect
+                    and communicate how automated evaluation systems reach
+                    their conclusions.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">
+                    03
+                </div>
+
+                <h3>
+                    Difficult-to-audit processes
+                </h3>
+
+                <p>
+                    When AI is involved in recruitment, organizations need
+                    processes that can be examined, documented and
+                    understood.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">
+                    04
+                </div>
+
+                <h3>
+                    Human potential gets overlooked
+                </h3>
+
+                <p>
+                    An opaque screening process can make it harder to
+                    understand the individual factors behind an evaluation
+                    and potentially overlook valuable candidates.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TARGET CUSTOMER
+========================= -->
+
+<section class="target">
+
+    <div class="container">
+
+        <div class="section-label">
+            Who We Serve
+        </div>
+
+        <h2>
+            Built for organizations that need explainable recruitment AI.
+        </h2>
+
+        <div class="target-box">
+
+            <p>
+                Our initial target is
+                <strong>SMEs and boutique recruitment agencies</strong>,
+                particularly organizations with fewer than 50 employees
+                that may not have dedicated legal or AI engineering teams
+                but still need to understand and document their recruitment
+                processes.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCT
+========================= -->
+
+<section id="product">
+
+    <div class="container">
+
+        <div class="section-label">
+            Our Product
+        </div>
+
+        <h2>
+            From AI decisions to understandable evidence.
+        </h2>
+
+        <p class="section-intro">
+            EthicaHR aims to develop an explainable AI solution for
+            recruitment that translates complex model decisions into
+            structured and understandable reports.
+        </p>
+
+
+        <div class="product-grid">
+
+            <div class="product-card">
+
+                <h3>
+                    Explainable AI
+                </h3>
+
+                <p>
+                    We use Explainable AI techniques to identify the
+                    contribution of individual variables to a model's
+                    decision.
+                </p>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <h3>
+                    Transparent Evaluation
+                </h3>
+
+                <p>
+                    Instead of presenting only an outcome, the system is
+                    designed to provide information that helps users
+                    understand the reasoning behind the evaluation.
+                </p>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <h3>
+                    Bias-Aware Design
+                </h3>
+
+                <p>
+                    The MVP focuses on making the evaluation process more
+                    inspectable and supporting the analysis of potential
+                    discriminatory effects.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MVP
+========================= -->
+
+<section class="mvp" id="mvp">
+
+    <div class="container">
+
+        <div class="section-label">
+            MVP 0.1
+        </div>
+
+        <h2>
+            How the first version works.
+        </h2>
+
+        <p class="section-intro">
+            The first MVP is designed to demonstrate how explainability
+            can be integrated into AI-assisted candidate evaluation and
+            converted into a usable XAI report.
+        </p>
+
+
+        <div class="mvp-flow">
+
+            <div class="mvp-step">
+
+                <div class="number">
+                    01
+                </div>
+
+                <h3>
+                    Candidate Data
+                </h3>
+
+                <p>
+                    Relevant candidate information is provided to the
+                    evaluation system.
+                </p>
+
+            </div>
+
+
+            <div class="mvp-step">
+
+                <div class="number">
+                    02
+                </div>
+
+                <h3>
+                    AI Evaluation
+                </h3>
+
+                <p>
+                    The model processes the available variables and
+                    produces an evaluation.
+                </p>
+
+            </div>
+
+
+            <div class="mvp-step">
+
+                <div class="number">
+                    03
+                </div>
+
+                <h3>
+                    SHAP Analysis
+                </h3>
+
+                <p>
+                    SHAP-based analysis identifies the contribution of
+                    individual variables to the model output.
+                </p>
+
+            </div>
+
+
+            <div class="mvp-step">
+
+                <div class="number">
+                    04
+                </div>
+
+                <h3>
+                    XAI Report
+                </h3>
+
+                <p>
+                    The resulting information is transformed into a
+                    structured report designed to make the evaluation
+                    easier to understand and inspect.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="xai-highlight">
+
+            <h3>
+                Explainability is not an extra layer.
+            </h3>
+
+            <p>
+                It is at the core of the MVP. EthicaHR aims to translate
+                complex decision vectors into understandable mathematical
+                and technical evidence that can support the evaluation
+                process.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">
+            Our Approach
+        </div>
+
+        <h2>
+            A human remains part of the decision.
+        </h2>
+
+        <p class="section-intro">
+            EthicaHR is designed to support recruitment professionals,
+            not replace human judgment.
+        </p>
+
+
+        <div class="process">
+
+            <div class="process-step">
+
+                <div class="number">
+                    01
+                </div>
+
+                <h3>
+                    Input
+                </h3>
+
+                <p>
+                    Candidate information enters the evaluation workflow.
+                </p>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="number">
+                    02
+                </div>
+
+                <h3>
+                    Evaluation
+                </h3>
+
+                <p>
+                    An AI model processes the relevant variables.
+                </p>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="number">
+                    03
+                </div>
+
+                <h3>
+                    Explanation
+                </h3>
+
+                <p>
+                    Explainability techniques provide insight into the
+                    factors contributing to the model output.
+                </p>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="number">
+                    04
+                </div>
+
+                <h3>
+                    Human Decision
+                </h3>
+
+                <p>
+                    The resulting information supports a human-led
+                    recruitment decision.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WHY ETHICAHR
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">
+            Why EthicaHR
+        </div>
+
+        <h2>
+            Built around explainability from the start.
+        </h2>
+
+        <div class="why-grid">
+
+            <div class="card">
+
+                <h3>
+                    Research-driven
+                </h3>
+
+                <p>
+                    EthicaHR is being developed within a university and
+                    research-oriented ecosystem, connecting technology,
+                    scientific validation and entrepreneurship.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Explainability first
+                </h3>
+
+                <p>
+                    XAI is a core component of the product rather than an
+                    additional feature added after the recruitment system
+                    has already been built.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Responsible AI
+                </h3>
+
+                <p>
+                    The product is designed around transparency,
+                    inspectability and awareness of the risks associated
+                    with AI-assisted recruitment.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    University ecosystem
+                </h3>
+
+                <p>
+                    The project leverages an academic environment to
+                    support research, technical development and validation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     AI ACT
+========================= -->
+
+<section class="regulation" id="regulation">
+
+    <div class="container">
+
+        <div class="section-label">
+            AI & Regulation
+        </div>
+
+        <div class="regulation-content">
+
+            <div>
+
+                <h2>
+                    Recruitment AI needs transparency and accountability.
+                </h2>
+
+                <p>
+                    The regulatory environment surrounding artificial
+                    intelligence is making transparency, documentation and
+                    risk management increasingly important for organizations
+                    using AI in employment-related contexts.
+                </p>
+
+                <p style="margin-top:20px;">
+                    EthicaHR is designed to address this challenge by
+                    making AI-assisted evaluation more explainable and
+                    inspectable.
+                </p>
+
+            </div>
+
+
+            <div class="regulation-points">
+
+                <div class="regulation-point">
+
+                    <h3>
+                        Explainability
+                    </h3>
+
+                    <p>
+                        Understand the factors contributing to an AI
+                        evaluation rather than relying solely on a
+                        black-box output.
+                    </p>
+
+                </div>
+
+
+                <div class="regulation-point">
+
+                    <h3>
+                        Documentation
+                    </h3>
+
+                    <p>
+                        Generate structured technical information that can
+                        support the documentation and analysis of an
+                        AI-assisted process.
+                    </p>
+
+                </div>
+
+
+                <div class="regulation-point">
+
+                    <h3>
+                        Verifiability
+                    </h3>
+
+                    <p>
+                        Make the underlying evaluation process easier to
+                        inspect and scientifically analyse.
+                    </p>
+
+                </div>
+
+
+                <div class="regulation-point">
+
+                    <h3>
+                        Responsible deployment
+                    </h3>
+
+                    <p>
+                        Consider regulatory and ethical requirements as part
+                        of product development rather than as an afterthought.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="regulation-note">
+
+            EthicaHR is developing a technical solution for explainability
+            and verification. It does not represent itself as an official
+            AI Act certification body.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BUSINESS MODEL
+========================= -->
+
+<section id="business">
+
+    <div class="container">
+
+        <div class="section-label">
+            Business Model
+        </div>
+
+        <h2>
+            A B2B model designed for different agency sizes.
+        </h2>
+
+        <p class="section-intro">
+            The proposed business model combines recurring software access
+            with a flexible pay-per-use option for organizations with
+            lower volumes.
+        </p>
+
+
+        <div class="business-grid">
+
+            <div class="business-card">
+
+                <h3>
+                    Annual SaaS
+                </h3>
+
+                <div class="price">
+                    €5,000
+                </div>
+
+                <div class="price-description">
+                    Proposed annual license
+                </div>
+
+                <p style="margin-top:20px;">
+                    Access to the platform, explainability functionality
+                    and ongoing generation of XAI reports.
+                </p>
+
+            </div>
+
+
+            <div class="business-card">
+
+                <h3>
+                    Pay-per-use
+                </h3>
+
+                <div class="price">
+                    €250
+                </div>
+
+                <div class="price-description">
+                    Proposed price per XAI report
+                </div>
+
+                <p style="margin-top:20px;">
+                    A flexible entry point for boutique agencies with
+                    lower volumes of recruitment activity.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TRACTION
+========================= -->
+
+<section class="target">
+
+    <div class="container">
+
+        <div class="section-label">
+            Validation & Traction
+        </div>
+
+        <h2>
+            Validate before scaling.
+        </h2>
+
+        <p class="section-intro">
+            The MVP is intended not only as a technical prototype, but
+            also as a tool for commercial validation.
+        </p>
+
+
+        <div class="problem-grid">
+
+            <div class="card">
+
+                <div class="card-number">
+                    01
+                </div>
+
+                <h3>
+                    Interactive MVP
+                </h3>
+
+                <p>
+                    The initial version is planned as an interactive
+                    showcase that can communicate the product concept to
+                    potential customers and partners.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">
+                    02
+                </div>
+
+                <h3>
+                    Customer Validation
+                </h3>
+
+                <p>
+                    Demos and pilot relationships can be used to test
+                    whether recruitment agencies perceive value in
+                    explainable AI reporting.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">
+                    03
+                </div>
+
+                <h3>
+                    Letters of Intent
+                </h3>
+
+                <p>
+                    Early conversations with potential customers can be
+                    converted into letters of intent and pilot agreements.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">
+                    04
+                </div>
+
+                <h3>
+                    Commercial Metrics
+                </h3>
+
+                <p>
+                    Conversion rates, pilot contracts and customer
+                    engagement will help validate the business model before
+                    broader deployment.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ROADMAP
+========================= -->
+
+<section class="roadmap">
+
+    <div class="container">
+
+        <div class="section-label">
+            Roadmap
+        </div>
+
+        <h2>
+            From MVP to a real platform.
+        </h2>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <span>
+                    Phase 01
+                </span>
+
+                <h3>
+                    MVP 0.1
+                </h3>
+
+                <p>
+                    Launch the initial website and interactive product
+                    mockup, using it to communicate the concept and begin
+                    commercial validation.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <span>
+                    Phase 02
+                </span>
+
+                <h3>
+                    XAI Engine
+                </h3>
+
+                <p>
+                    Integrate and consolidate the explainability engine,
+                    including the SHAP-based analysis described in the MVP
+                    specification.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <span>
+                    Phase 03
+                </span>
+
+                <h3>
+                    Backend & Infrastructure
+                </h3>
+
+                <p>
+                    Transition from the initial mockup toward the real
+                    architecture, including backend infrastructure and
+                    database security.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <span>
+                    Phase 04
+                </span>
+
+                <h3>
+                    Commercial Deployment
+                </h3>
+
+                <p>
+                    Develop pilot relationships with recruitment agencies,
+                    validate the revenue model and expand the product based
+                    on customer feedback.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TEAM
+========================= -->
+
+<section id="team">
+
+    <div class="container">
+
+        <div class="section-label">
+            About Us
+        </div>
+
+        <h2>
+            A multidisciplinary team at the intersection of AI,
+            research and entrepreneurship.
+        </h2>
+
+        <p class="section-intro">
+            EthicaHR is a project developed by a multidisciplinary team
+            working across artificial intelligence, technology, research
+            and entrepreneurship.
+        </p>
+
+
+        <div class="team-grid">
+
+
+            <!-- MEMBER 1 -->
+
+            <div class="team-member">
+
+                <img src="cristina.jpg" alt="Cristina">
+
+                <div>
+
+                    <h3>
+                        Maria Cristina Cera
+                    </h3>
+
+                    <p>
+                        Communication e marketing - CMO 
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MEMBER 2 -->
+
+            <div class="team-member">
+
+                <img src="luca.jpg" alt="luca">
+
+                <div>
+
+                    <h3>
+                        Luca Vitaliano Damiano
+                    </h3>
+
+                    <p>
+                        Software engineer - CTO
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MEMBER 3 -->
+
+            <div class="team-member">
+
+                <img src="caterina.jpg" alt="Caterina">
+
+                <div>
+
+                    <h3>
+                        Caterina Giua
+                    </h3>
+
+                    <p>
+                        Market strategy - COO
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MEMBER 4 -->
+
+            <div class="team-member">
+
+                <img src="placeholder.jpg" alt="Cristina">
+
+                <div>
+
+                    <h3>
+                        Riccardo Bortolotti
+                    </h3>
+
+                    <p>
+                        Legal architect - CLO
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta" id="contact">
+
+    <div class="container">
+
+        <div class="section-label">
+            Get in Touch
+        </div>
+
+        <h2>
+            Interested in building more transparent recruitment AI?
+        </h2>
+
+        <p>
+            We are developing EthicaHR and are interested in connecting
+            with recruitment agencies, HR professionals, researchers,
+            organizations and potential partners.
+        </p>
+
+        <a
+            href="mailto:ethicaHR@protonmail.com"
+            class="button">
+            Contact EthicaHR
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+                EthicaHR
+            </div>
+
+
+            <div class="footer-info">
+
+                <div>
+                    Cagliari, Italy
+                </div>
+
+                <div>
+                    <a href="mailto:ethicaHR@protonmail.com">
+                        ethicaHR@protonmail.com
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            A project born during the X Edition of CLAB – UniCa CREA
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
+```
